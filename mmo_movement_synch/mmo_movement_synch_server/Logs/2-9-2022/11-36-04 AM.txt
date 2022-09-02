@@ -1,0 +1,27 @@
+[Trace]   DarkRiftServer        System Details:
+                                	OS: Microsoft Windows NT 10.0.19044.0
+                                	CLS Version: 4.0.30319.42000
+                                	DarkRift: 2.10.1.0 - Free
+[Trace]   PluginFactory         Created plugin 'CompatibilityBichannelListener'.
+[Trace]   HttpHealthCheck       HTTP health check started at 'http://localhost:10666/health'
+[Trace]   DarkRiftServer        Binding listeners to ClientManager as server is externally visible.
+[Trace]   DefaultNetworkListener Starting compatibility listener.
+[Info]    DefaultNetworkListener Server mounted, listening on port 4296.
+[Trace]   DefaultNetworkListener Accepted TCP connection from 127.0.0.1:50569.
+[Trace]   DefaultNetworkListener Accepted UDP connection from 127.0.0.1:51426.
+[Info]    ClientManager         New client [0] connected [127.0.0.1:50569|127.0.0.1:51426].
+[Trace]   DefaultNetworkListener Accepted TCP connection from 127.0.0.1:50573.
+[Trace]   DefaultNetworkListener Accepted UDP connection from 127.0.0.1:51427.
+[Info]    ClientManager         New client [1] connected [127.0.0.1:50573|127.0.0.1:51427].
+[Trace]   DefaultNetworkListener Accepted TCP connection from 127.0.0.1:50578.
+[Trace]   DefaultNetworkListener Accepted UDP connection from 127.0.0.1:51428.
+[Info]    ClientManager         New client [2] connected [127.0.0.1:50578|127.0.0.1:51428].
+[Trace]   DefaultNetworkListener Accepted TCP connection from 127.0.0.1:50582.
+[Trace]   DefaultNetworkListener Accepted UDP connection from 127.0.0.1:63522.
+[Info]    ClientManager         New client [3] connected [127.0.0.1:50582|127.0.0.1:63522].
+[Info]    ClientManager         Client [0] disconnected.
+[Info]    ClientManager         Client [1] disconnected.
+[Info]    ClientManager         Client [3] disconnected.
+[Info]    ClientManager         Client [2] disconnected.
+[Warning] ObjectCacheMonitor    9 AutoRecyclingArray objects were finalized last period. This is usually a sign that you are not recycling objects correctly.
+[Warning] ObjectCacheMonitor    10 MessageBuffer objects were finalized last period. This is usually a sign that you are not recycling objects correctly.

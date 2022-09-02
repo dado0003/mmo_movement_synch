@@ -1,0 +1,26 @@
+[Trace]   DarkRiftServer        System Details:
+                                	OS: Microsoft Windows NT 10.0.19044.0
+                                	CLS Version: 4.0.30319.42000
+                                	DarkRift: 2.10.1.0 - Free
+[Trace]   PluginFactory         Created plugin 'CompatibilityBichannelListener'.
+[Trace]   HttpHealthCheck       HTTP health check started at 'http://localhost:10666/health'
+[Trace]   DarkRiftServer        Binding listeners to ClientManager as server is externally visible.
+[Trace]   DefaultNetworkListener Starting compatibility listener.
+[Info]    DefaultNetworkListener Server mounted, listening on port 4296.
+[Trace]   DefaultNetworkListener Accepted TCP connection from 127.0.0.1:50925.
+[Trace]   DefaultNetworkListener Accepted UDP connection from 127.0.0.1:57633.
+[Info]    ClientManager         New client [0] connected [127.0.0.1:50925|127.0.0.1:57633].
+[Trace]   DefaultNetworkListener Accepted TCP connection from 127.0.0.1:50926.
+[Trace]   DefaultNetworkListener Accepted UDP connection from 127.0.0.1:57634.
+[Info]    ClientManager         New client [1] connected [127.0.0.1:50926|127.0.0.1:57634].
+[Info]    ClientManager         Client [1] disconnected.
+[Info]    ClientManager         Client [0] disconnected.
+[Warning] ObjectCacheMonitor    3 AutoRecyclingArray objects were finalized last period. This is usually a sign that you are not recycling objects correctly.
+[Warning] ObjectCacheMonitor    3 MessageBuffer objects were finalized last period. This is usually a sign that you are not recycling objects correctly.
+[Trace]   DefaultNetworkListener Accepted TCP connection from 127.0.0.1:50929.
+[Trace]   DefaultNetworkListener Accepted UDP connection from 127.0.0.1:57635.
+[Info]    ClientManager         New client [2] connected [127.0.0.1:50929|127.0.0.1:57635].
+[Trace]   DefaultNetworkListener Accepted TCP connection from 127.0.0.1:50933.
+[Trace]   DefaultNetworkListener Accepted UDP connection from 127.0.0.1:57636.
+[Info]    ClientManager         New client [3] connected [127.0.0.1:50933|127.0.0.1:57636].
+[Info]    ClientManager         Client [2] disconnected.

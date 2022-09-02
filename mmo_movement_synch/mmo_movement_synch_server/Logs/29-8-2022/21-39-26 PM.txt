@@ -1,0 +1,33 @@
+[Trace]   DarkRiftServer        System Details:
+                                	OS: Microsoft Windows NT 10.0.19044.0
+                                	CLS Version: 4.0.30319.42000
+                                	DarkRift: 2.10.1.0 - Free
+[Trace]   PluginFactory         Created plugin 'CompatibilityBichannelListener'.
+[Trace]   HttpHealthCheck       HTTP health check started at 'http://localhost:10666/health'
+[Trace]   DarkRiftServer        Binding listeners to ClientManager as server is externally visible.
+[Trace]   DefaultNetworkListener Starting compatibility listener.
+[Info]    DefaultNetworkListener Server mounted, listening on port 4296.
+[Trace]   DefaultNetworkListener Accepted TCP connection from 127.0.0.1:61450.
+[Trace]   DefaultNetworkListener Accepted UDP connection from 127.0.0.1:54274.
+[Info]    ClientManager         New client [0] connected [127.0.0.1:61450|127.0.0.1:54274].
+[Trace]   DefaultNetworkListener Accepted TCP connection from 127.0.0.1:61454.
+[Trace]   DefaultNetworkListener Accepted UDP connection from 127.0.0.1:56717.
+[Info]    ClientManager         New client [1] connected [127.0.0.1:61454|127.0.0.1:56717].
+[Trace]   DefaultNetworkListener Accepted TCP connection from 127.0.0.1:61460.
+[Trace]   DefaultNetworkListener Accepted UDP connection from 127.0.0.1:53305.
+[Info]    ClientManager         New client [2] connected [127.0.0.1:61460|127.0.0.1:53305].
+[Info]    ClientManager         Client [1] disconnected.
+[Info]    ClientManager         Client [0] disconnected.
+[Info]    ClientManager         Client [2] disconnected.
+[Trace]   DefaultNetworkListener Accepted TCP connection from 127.0.0.1:61465.
+[Trace]   DefaultNetworkListener Accepted UDP connection from 127.0.0.1:64791.
+[Info]    ClientManager         New client [3] connected [127.0.0.1:61465|127.0.0.1:64791].
+[Trace]   DefaultNetworkListener Accepted TCP connection from 127.0.0.1:61468.
+[Trace]   DefaultNetworkListener Accepted UDP connection from 127.0.0.1:64792.
+[Info]    ClientManager         New client [4] connected [127.0.0.1:61468|127.0.0.1:64792].
+[Info]    ClientManager         Client [4] disconnected.
+[Trace]   DefaultNetworkListener Accepted TCP connection from 127.0.0.1:61472.
+[Trace]   DefaultNetworkListener Accepted UDP connection from 127.0.0.1:63582.
+[Info]    ClientManager         New client [5] connected [127.0.0.1:61472|127.0.0.1:63582].
+[Info]    ClientManager         Client [3] disconnected.
+[Info]    ClientManager         Client [5] disconnected.

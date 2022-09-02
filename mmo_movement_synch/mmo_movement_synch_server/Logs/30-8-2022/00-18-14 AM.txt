@@ -1,0 +1,29 @@
+[Trace]   DarkRiftServer        System Details:
+                                	OS: Microsoft Windows NT 10.0.19044.0
+                                	CLS Version: 4.0.30319.42000
+                                	DarkRift: 2.10.1.0 - Free
+[Trace]   PluginFactory         Created plugin 'CompatibilityBichannelListener'.
+[Trace]   HttpHealthCheck       HTTP health check started at 'http://localhost:10666/health'
+[Trace]   DarkRiftServer        Binding listeners to ClientManager as server is externally visible.
+[Trace]   DefaultNetworkListener Starting compatibility listener.
+[Info]    DefaultNetworkListener Server mounted, listening on port 4296.
+[Trace]   DefaultNetworkListener Accepted TCP connection from 127.0.0.1:63467.
+[Trace]   DefaultNetworkListener Accepted UDP connection from 127.0.0.1:54752.
+[Info]    ClientManager         New client [0] connected [127.0.0.1:63467|127.0.0.1:54752].
+[Trace]   DefaultNetworkListener Accepted TCP connection from 127.0.0.1:63470.
+[Trace]   DefaultNetworkListener Accepted UDP connection from 127.0.0.1:58599.
+[Info]    ClientManager         New client [1] connected [127.0.0.1:63470|127.0.0.1:58599].
+[Info]    ClientManager         Client [1] disconnected.
+[Info]    ClientManager         Client [0] disconnected.
+[Trace]   DefaultNetworkListener Accepted TCP connection from 127.0.0.1:63478.
+[Trace]   DefaultNetworkListener Accepted UDP connection from 127.0.0.1:51294.
+[Info]    ClientManager         New client [2] connected [127.0.0.1:63478|127.0.0.1:51294].
+[Trace]   DefaultNetworkListener Accepted TCP connection from 127.0.0.1:63481.
+[Trace]   DefaultNetworkListener Accepted UDP connection from 127.0.0.1:51295.
+[Info]    ClientManager         New client [3] connected [127.0.0.1:63481|127.0.0.1:51295].
+[Trace]   DefaultNetworkListener Accepted TCP connection from 127.0.0.1:63485.
+[Trace]   DefaultNetworkListener Accepted UDP connection from 127.0.0.1:51296.
+[Info]    ClientManager         New client [4] connected [127.0.0.1:63485|127.0.0.1:51296].
+[Info]    ClientManager         Client [2] disconnected.
+[Info]    ClientManager         Client [3] disconnected.
+[Info]    ClientManager         Client [4] disconnected.
