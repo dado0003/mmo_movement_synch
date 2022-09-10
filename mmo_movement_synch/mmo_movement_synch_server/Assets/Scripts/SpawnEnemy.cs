@@ -19,7 +19,7 @@ namespace DarkRiftRPG
 
             PlayerManager.Instance.Enemies.Add(counter, enemy);
             
-            EnemySpawnData enemySpawn = new EnemySpawnData(counter, Enemy.transform.position);
+            EnemySpawnData enemySpawn = new EnemySpawnData(counter, Enemy.transform.position, Enemy.transform.rotation);
             ServerManager.Instance.SendToAll(Tags.SpawnEnemy, enemySpawn);
             counter++;
         }

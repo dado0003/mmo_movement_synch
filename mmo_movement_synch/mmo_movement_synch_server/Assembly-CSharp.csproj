@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{213C717A-837D-E728-85CF-A99E0E55BE80}</ProjectGuid>
+    <ProjectGuid>{0C0D911C-5C66-306C-05E3-D262967ADF84}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -58,6 +58,7 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\ConnectedClient.cs" />
     <Compile Include="Assets\DarkRift\1 ChatDemo\ChatDemo.cs" />
+    <Compile Include="Assets\Scripts\SpawnEnemy.cs" />
     <Compile Include="Assets\DarkRift\3 BlockDemo\BlockCharacterManager.cs" />
     <Compile Include="Assets\DarkRift\DarkRift\Plugins\Client\UnityClient.cs" />
     <Compile Include="Assets\Scripts\Shared\NetworkMessages.cs" />
@@ -68,6 +69,7 @@
     <Compile Include="Assets\Scripts\ServerManager.cs" />
     <Compile Include="Assets\DarkRift\3 BlockDemo\BlockWorld.cs" />
     <Compile Include="Assets\DarkRift\DarkRift\Plugins\Server\UnityServerHelper.cs" />
+    <Compile Include="Assets\Scripts\EnemyAi.cs" />
     <Compile Include="Assets\DarkRift\DarkRift\Plugins\Server\UnityServer.cs" />
     <Compile Include="Assets\DarkRift\2 DragDemo\DragObject.cs" />
     <Compile Include="Assets\DarkRift\DarkRift\Plugins\Client\SerializableObjectCacheSettings.cs" />
@@ -78,8 +80,6 @@
     <Compile Include="Assets\Scripts\ServerMovement.cs" />
     <Compile Include="Assets\DarkRift\DarkRift\Plugins\Server\XmlUnityServer.cs" />
     <Compile Include="Assets\DarkRift\3 BlockDemo\FirstPersonController.cs" />
-    <Compile Include="Assets\Scripts\EnemyAi.cs" />
-    <Compile Include="Assets\Scripts\SpawnEnemy.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\DarkRift\3 BlockDemo\ReadMe.txt" />

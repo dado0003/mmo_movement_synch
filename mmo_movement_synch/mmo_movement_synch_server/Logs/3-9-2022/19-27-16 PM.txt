@@ -1,0 +1,24 @@
+[Trace]   DarkRiftServer        System Details:
+                                	OS: Microsoft Windows NT 10.0.19044.0
+                                	CLS Version: 4.0.30319.42000
+                                	DarkRift: 2.10.1.0 - Free
+[Trace]   PluginFactory         Created plugin 'CompatibilityBichannelListener'.
+[Trace]   HttpHealthCheck       HTTP health check started at 'http://localhost:10666/health'
+[Trace]   DarkRiftServer        Binding listeners to ClientManager as server is externally visible.
+[Trace]   DefaultNetworkListener Starting compatibility listener.
+[Info]    DefaultNetworkListener Server mounted, listening on port 4296.
+[Trace]   DefaultNetworkListener Accepted TCP connection from 127.0.0.1:57652.
+[Trace]   DefaultNetworkListener Accepted UDP connection from 127.0.0.1:53042.
+[Info]    ClientManager         New client [0] connected [127.0.0.1:57652|127.0.0.1:53042].
+[Info]    ClientManager         Client [0] disconnected.
+[Warning] ObjectCacheMonitor    1 AutoRecyclingArray objects were finalized last period. This is usually a sign that you are not recycling objects correctly.
+[Warning] ObjectCacheMonitor    1 MessageBuffer objects were finalized last period. This is usually a sign that you are not recycling objects correctly.
+[Trace]   DefaultNetworkListener Accepted TCP connection from 127.0.0.1:57669.
+[Trace]   DefaultNetworkListener Accepted UDP connection from 127.0.0.1:57537.
+[Info]    ClientManager         New client [1] connected [127.0.0.1:57669|127.0.0.1:57537].
+[Error]   ClientManager         A plugin encountered an error whilst handling the ClientDisconnected event. (See logs for exception)
+                                 System.Collections.Generic.KeyNotFoundException: The given key was not present in the dictionary.
+                                   at System.Collections.Generic.Dictionary`2[TKey,TValue].get_Item (TKey key) [0x0001e] in <695d1cc93cca45069c528c15c9fdd749>:0 
+                                   at DarkRiftRPG.ServerManager.OnClientDisconnected (System.Object sender, DarkRift.Server.ClientDisconnectedEventArgs e) [0x00018] in D:\unity\git\mmo_movement_synch\mmo_movement_synch\mmo_movement_synch_server\Assets\Scripts\ServerManager.cs:79 
+                                   at DarkRift.Server.ClientManager+<>c__DisplayClass40_0.<HandleDisconnection>b__0 () [0x0002b] in <ebaa86b9952c4ebb86ba06cbbada672f>:0 
+[Info]    ClientManager         Client [1] disconnected.

@@ -22,8 +22,12 @@ namespace DarkRiftRPG
 
         private StatePayload[] stateBuffer;
         private Queue<InputPayload> inputQueue;
+        public Animator animator;
 
-
+        private void Awake()
+        {
+            animator = GetComponent<Animator>();
+        }
 
         void Start()
         {
@@ -51,6 +55,7 @@ namespace DarkRiftRPG
                 inputQueue.Enqueue(inputPayload);
             }
             
+
         }
 
         IEnumerator SendToClientFunc(StatePayload statePayload)
@@ -85,7 +90,17 @@ namespace DarkRiftRPG
         StatePayload ProcessMovement(InputPayload input)
         {
             // Should always be in sync with same function on Client
-            transform.position += input.inputVector * 5f * minTimeBetweenTicks;
+            if (input.inputVector.y == 0.0 && input.inputVector.x == 0.0 && input.inputVector.z == 0.0)
+            {
+                animator.SetBool("isMoving", false);
+            }
+            else
+            {
+                animator.SetBool("isMoving", true);
+            }
+            transform.Translate(input.inputVector * 5f * minTimeBetweenTicks, Space.World);
+            Rigidbody rb = transform.GetComponent<Rigidbody>();
+            rb.MoveRotation(input.lookRotation);
 
             return new StatePayload()
             {

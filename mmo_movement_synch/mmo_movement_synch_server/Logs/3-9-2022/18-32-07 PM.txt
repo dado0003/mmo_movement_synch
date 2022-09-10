@@ -1,0 +1,72 @@
+[Trace]   DarkRiftServer        System Details:
+                                	OS: Microsoft Windows NT 10.0.19044.0
+                                	CLS Version: 4.0.30319.42000
+                                	DarkRift: 2.10.1.0 - Free
+[Trace]   PluginFactory         Created plugin 'CompatibilityBichannelListener'.
+[Trace]   HttpHealthCheck       HTTP health check started at 'http://localhost:10666/health'
+[Trace]   DarkRiftServer        Binding listeners to ClientManager as server is externally visible.
+[Trace]   DefaultNetworkListener Starting compatibility listener.
+[Info]    DefaultNetworkListener Server mounted, listening on port 4296.
+[Trace]   DefaultNetworkListener Accepted TCP connection from 127.0.0.1:64727.
+[Trace]   DefaultNetworkListener Accepted UDP connection from 127.0.0.1:54984.
+[Info]    ClientManager         New client [0] connected [127.0.0.1:64727|127.0.0.1:54984].
+[Info]    ClientManager         Client [0] disconnected.
+[Trace]   DefaultNetworkListener Accepted TCP connection from 127.0.0.1:64729.
+[Trace]   DefaultNetworkListener Accepted UDP connection from 127.0.0.1:64551.
+[Info]    ClientManager         New client [1] connected [127.0.0.1:64729|127.0.0.1:64551].
+[Info]    ClientManager         Client [1] disconnected.
+[Trace]   DefaultNetworkListener Accepted TCP connection from 127.0.0.1:64737.
+[Trace]   DefaultNetworkListener Accepted UDP connection from 127.0.0.1:55443.
+[Info]    ClientManager         New client [2] connected [127.0.0.1:64737|127.0.0.1:55443].
+[Info]    ClientManager         Client [2] disconnected.
+[Trace]   DefaultNetworkListener Accepted TCP connection from 127.0.0.1:64741.
+[Trace]   DefaultNetworkListener Accepted UDP connection from 127.0.0.1:56486.
+[Info]    ClientManager         New client [3] connected [127.0.0.1:64741|127.0.0.1:56486].
+[Info]    ClientManager         Client [3] disconnected.
+[Trace]   DefaultNetworkListener Accepted TCP connection from 127.0.0.1:64746.
+[Trace]   DefaultNetworkListener Accepted UDP connection from 127.0.0.1:59231.
+[Info]    ClientManager         New client [4] connected [127.0.0.1:64746|127.0.0.1:59231].
+[Info]    ClientManager         Client [4] disconnected.
+[Trace]   DefaultNetworkListener Accepted TCP connection from 127.0.0.1:64755.
+[Trace]   DefaultNetworkListener Accepted UDP connection from 127.0.0.1:52213.
+[Info]    ClientManager         New client [5] connected [127.0.0.1:64755|127.0.0.1:52213].
+[Info]    ClientManager         Client [5] disconnected.
+[Trace]   DefaultNetworkListener Accepted TCP connection from 127.0.0.1:64780.
+[Trace]   DefaultNetworkListener Accepted UDP connection from 127.0.0.1:56297.
+[Info]    ClientManager         New client [6] connected [127.0.0.1:64780|127.0.0.1:56297].
+[Info]    ClientManager         Client [6] disconnected.
+[Trace]   DefaultNetworkListener Accepted TCP connection from 127.0.0.1:64798.
+[Trace]   DefaultNetworkListener Accepted UDP connection from 127.0.0.1:62250.
+[Info]    ClientManager         New client [7] connected [127.0.0.1:64798|127.0.0.1:62250].
+[Error]   ClientManager         A plugin encountered an error whilst handling the ClientDisconnected event. (See logs for exception)
+                                 System.Collections.Generic.KeyNotFoundException: The given key was not present in the dictionary.
+                                   at System.Collections.Generic.Dictionary`2[TKey,TValue].get_Item (TKey key) [0x0001e] in <695d1cc93cca45069c528c15c9fdd749>:0 
+                                   at DarkRiftRPG.ServerManager.OnClientDisconnected (System.Object sender, DarkRift.Server.ClientDisconnectedEventArgs e) [0x00018] in D:\unity\git\mmo_movement_synch\mmo_movement_synch\mmo_movement_synch_server\Assets\Scripts\ServerManager.cs:79 
+                                   at DarkRift.Server.ClientManager+<>c__DisplayClass40_0.<HandleDisconnection>b__0 () [0x0002b] in <ebaa86b9952c4ebb86ba06cbbada672f>:0 
+[Info]    ClientManager         Client [7] disconnected.
+[Trace]   DefaultNetworkListener Accepted TCP connection from 127.0.0.1:64805.
+[Trace]   DefaultNetworkListener Accepted UDP connection from 127.0.0.1:51092.
+[Info]    ClientManager         New client [8] connected [127.0.0.1:64805|127.0.0.1:51092].
+[Info]    ClientManager         Client [8] disconnected.
+[Trace]   DefaultNetworkListener Accepted TCP connection from 127.0.0.1:64810.
+[Trace]   DefaultNetworkListener Accepted UDP connection from 127.0.0.1:52861.
+[Info]    ClientManager         New client [9] connected [127.0.0.1:64810|127.0.0.1:52861].
+[Info]    ClientManager         Client [9] disconnected.
+[Warning] ObjectCacheMonitor    2 AutoRecyclingArray objects were finalized last period. This is usually a sign that you are not recycling objects correctly.
+[Warning] ObjectCacheMonitor    2 MessageBuffer objects were finalized last period. This is usually a sign that you are not recycling objects correctly.
+[Trace]   DefaultNetworkListener Accepted TCP connection from 127.0.0.1:64825.
+[Trace]   DefaultNetworkListener Accepted UDP connection from 127.0.0.1:53867.
+[Info]    ClientManager         New client [10] connected [127.0.0.1:64825|127.0.0.1:53867].
+[Info]    ClientManager         Client [10] disconnected.
+[Trace]   DefaultNetworkListener Accepted TCP connection from 127.0.0.1:64828.
+[Trace]   DefaultNetworkListener Accepted UDP connection from 127.0.0.1:61945.
+[Info]    ClientManager         New client [11] connected [127.0.0.1:64828|127.0.0.1:61945].
+[Info]    ClientManager         Client [11] disconnected.
+[Trace]   DefaultNetworkListener Accepted TCP connection from 127.0.0.1:64842.
+[Trace]   DefaultNetworkListener Accepted UDP connection from 127.0.0.1:57602.
+[Info]    ClientManager         New client [12] connected [127.0.0.1:64842|127.0.0.1:57602].
+[Info]    ClientManager         Client [12] disconnected.
+[Trace]   DefaultNetworkListener Accepted TCP connection from 127.0.0.1:64855.
+[Trace]   DefaultNetworkListener Accepted UDP connection from 127.0.0.1:56393.
+[Info]    ClientManager         New client [13] connected [127.0.0.1:64855|127.0.0.1:56393].
+[Info]    ClientManager         Client [13] disconnected.

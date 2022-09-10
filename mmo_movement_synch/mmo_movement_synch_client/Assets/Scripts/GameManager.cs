@@ -51,7 +51,7 @@ namespace DarkRiftRPG
         public void SpawnPlayer(PlayerSpawnData data)
         {
             LocalPlayerID = ConnectionManager.Instance.LocalClientID;
-            Debug.Log("Local Player ID set to: " + LocalPlayerID);
+            //Debug.Log("Local Player ID set to: " + LocalPlayerID);
             if (!ConnectedPlayers.ContainsKey(data.ID))
             {
 
@@ -59,13 +59,13 @@ namespace DarkRiftRPG
                 {
                     GameObject go = Instantiate(playerPrefab, data.Position, Quaternion.identity);
                     ConnectedPlayers.Add(data.ID, go);
-                    Debug.Log("Data id is " + data.ID);
+                    //Debug.Log("Data id is " + data.ID);
                 }
                 else
                 {
                     GameObject go = Instantiate(serverPlayerPrefab, data.Position, Quaternion.identity);
                     ConnectedPlayers.Add(data.ID, go);
-                    Debug.Log("Data id is " + data.ID);
+                    //Debug.Log("Data id is " + data.ID);
                 }
 
 
@@ -94,24 +94,23 @@ namespace DarkRiftRPG
                 {
                     ServerPlayerMovement player = (ServerPlayerMovement)ConnectedPlayers[playerID].GetComponent(typeof(ServerPlayerMovement));
                     player.OnClientInput(serverState);
-                    Debug.Log("NEposielaö local");
+                    //Debug.Log("NEposielaö local");
                 }
                 
             }
             else
             {
-                Debug.Log("posielaö local");
+                //Debug.Log("posielaö local");
             }
             
         }
 
         public void SpawnEnemyWithID(EnemySpawnData enemySpawnData)
         {
-            GameObject enemy = Instantiate(Enemy, enemySpawnData.Position, Enemy.transform.rotation);
-            Debug.Log("Vytvoril som ID: " + playerCount);
+            GameObject enemy = Instantiate(Enemy, enemySpawnData.Position, enemySpawnData.Rotation);
+            //Debug.Log("Vytvoril som ID: " + playerCount);
             Enemies.Add(enemyCounter, enemy);
 
-            EnemySpawnData enemySpawn = new EnemySpawnData(enemyCounter, Enemy.transform.position);
             enemyCounter++;
         }
 
@@ -119,13 +118,38 @@ namespace DarkRiftRPG
         {
 
             if (Enemies.ContainsKey(enemyMovement.ID)) { 
-            NavMeshAgent agent = (NavMeshAgent)Enemies[enemyMovement.ID].GetComponent(typeof(NavMeshAgent));
+            EnemyMovementClass enemy = (EnemyMovementClass)Enemies[enemyMovement.ID].GetComponent(typeof(EnemyMovementClass));
+            
         
-            Debug.Log("SnaûÌm sa pohn˙ù s ID:" + enemyMovement.ID);
+            //Debug.Log("SnaûÌm sa pohn˙ù s ID:" + enemyMovement.ID);
+                if (enemyMovement.State == false)
+                {
+                    enemy.moveToPos(enemyMovement.MovePosition);
+                    enemy.rotate(enemyMovement.Rotation);
+                } 
+                else
+                {
+                    enemy.moveToPos(enemy.transform.position);
+                    enemy.rotate(enemyMovement.Rotation);
+                    enemy.attacking();
+                }
+                
 
+                /*
+                 * if (enemyMovement.State == false)
+                {
+                    NavMeshAgent agent = (NavMeshAgent)Enemies[enemyMovement.ID].GetComponent(typeof(NavMeshAgent));
 
-            agent.SetDestination(enemyMovement.MovePosition);
-            }   
+                    Debug.Log("SnaûÌm sa pohn˙ù s ID:" + enemyMovement.ID);
+
+                    agent.SetDestination(enemyMovement.MovePosition);
+                }
+                else { 
+                
+                
+                }
+                 */
+            }
 
         }
     }

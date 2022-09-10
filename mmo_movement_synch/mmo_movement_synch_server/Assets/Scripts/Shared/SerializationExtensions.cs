@@ -51,6 +51,7 @@ namespace DarkRiftRPG
             writer.Write(q.x);
             writer.Write(q.y);
             writer.Write(q.z);
+            writer.Write(q.w);
         }
 
         /// <summary>
@@ -61,7 +62,7 @@ namespace DarkRiftRPG
             float x = reader.ReadSingle();
             float y = reader.ReadSingle();
             float z = reader.ReadSingle();
-            float w = Mathf.Sqrt(1f - (x * x + y * y + z * z));
+            float w = reader.ReadSingle();
 
             return new Quaternion(x, y, z, w);
         }

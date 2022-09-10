@@ -24,10 +24,18 @@ namespace DarkRiftRPG {
         private StatePayload lastProcessedState;
         private float horizontalInput;
         private float verticalInput;
+        private Vector3 forward;
+        private Vector3 right;
+        private Vector3 forwardRelative;
+        private Vector3 rightRelative;
+        private Vector3 cameraRelative;
+
+        public Animator animator;
 
         void Awake()
         {
             Instance = this;
+            animator = GetComponent<Animator>();
         }
 
         void Start()
@@ -42,6 +50,23 @@ namespace DarkRiftRPG {
         {
             horizontalInput = Input.GetAxis("Horizontal");
             verticalInput = Input.GetAxis("Vertical");
+
+            forward = Camera.main.transform.forward;
+            forward.y = 0;
+            forward = forward.normalized;
+            right = Camera.main.transform.right;
+            right.y = 0;
+            right = right.normalized;
+
+            forwardRelative = verticalInput * forward;
+            rightRelative = horizontalInput * right;
+
+            cameraRelative = forwardRelative + rightRelative;
+
+
+
+
+
 
             timer += Time.deltaTime;
 
@@ -80,12 +105,30 @@ namespace DarkRiftRPG {
             // Add payload to inputBuffer
             InputPayload inputPayload = new InputPayload();
             inputPayload.tick = currentTick;
-            inputPayload.inputVector = new Vector3(horizontalInput, 0, verticalInput);
+            inputPayload.inputVector = cameraRelative;
+            
+            
             inputBuffer[bufferIndex] = inputPayload;
 
             // Add payload to stateBuffer
             stateBuffer[bufferIndex] = ProcessMovement(inputPayload);
 
+            Quaternion lookRotation = Quaternion.LookRotation(inputPayload.inputVector);
+            lookRotation = Quaternion.RotateTowards(transform.rotation, lookRotation, Time.fixedDeltaTime * 360);
+            Rigidbody rb = transform.GetComponent<Rigidbody>();
+
+            if (inputPayload.inputVector.y == 0.0 && inputPayload.inputVector.x == 0.0 && inputPayload.inputVector.z == 0.0)
+            {
+                
+            }
+            else
+            {
+                
+                rb.MoveRotation(lookRotation);
+            }
+            inputPayload.lookRotation = lookRotation;
+            Debug.Log(lookRotation);
+            //Debug.Log("Toto je lookrotation" + inputPayload.lookRotation);
             // Send input to server
             StartCoroutine(SendToServer(inputPayload));
         }
@@ -93,7 +136,17 @@ namespace DarkRiftRPG {
         StatePayload ProcessMovement(InputPayload input)
         {
             // Should always be in sync with same function on Server
-            transform.position += input.inputVector * 5f * minTimeBetweenTicks;
+            
+            if(input.inputVector.y == 0.0 && input.inputVector.x == 0.0 && input.inputVector.z == 0.0)
+            {
+                animator.SetBool("isMoving", false);
+            }
+            else
+            {
+                animator.SetBool("isMoving", true);
+            }
+            transform.Translate(input.inputVector * 5f * minTimeBetweenTicks, Space.World);
+            //Debug.Log(input.inputVector);
 
             return new StatePayload()
             {
@@ -104,6 +157,7 @@ namespace DarkRiftRPG {
 
         void HandleServerReconciliation()
         {
+
             lastProcessedState = latestServerState;
 
             int serverStateBufferIndex = latestServerState.tick % BUFFER_SIZE;
@@ -111,7 +165,7 @@ namespace DarkRiftRPG {
 
             if (positionError > 0.001f)
             {
-                Debug.Log("We have to reconcile bro");
+                //Debug.Log("Reconcile");
                 // Rewind & Replay
                 transform.position = latestServerState.position;
 

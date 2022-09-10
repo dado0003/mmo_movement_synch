@@ -48,10 +48,14 @@ namespace DarkRiftRPG
 
         public void OnClientInput(IClient client, InputPayload inputPayload)//call this with data you sent to server
         {
-            InputPayloadWithID serverPlayerMovement = new InputPayloadWithID(moveClientID, inputPayload.tick, inputPayload.inputVector);
+            InputPayloadWithID serverPlayerMovement = new InputPayloadWithID(moveClientID, inputPayload.tick, inputPayload.inputVector, inputPayload.lookRotation);
+            Rigidbody rb = transform.GetComponent<Rigidbody>();
+            //Debug.Log("Toto je lookrotation" + inputPayload.lookRotation);
+            rb.MoveRotation(inputPayload.lookRotation);
+            Debug.Log(inputPayload.lookRotation);
             ServerManager.Instance.SendToAll(Tags.MovePlayerPayload, serverPlayerMovement);
             inputQueue.Enqueue(inputPayload);
-            Debug.Log(client.ID);//zisti client ID aby si vedel poslaù sp‰ù pozicie hr·Ëov a zobraziù ich na clientovi
+            //Debug.Log(client.ID);//zisti client ID aby si vedel poslaù sp‰ù pozicie hr·Ëov a zobraziù ich na clientovi
             moveClientID = client.ID;
         }
 
@@ -87,9 +91,9 @@ namespace DarkRiftRPG
             A H›BE ICH CEZ ONCLIENTINPUT*/
         StatePayload ProcessMovement(InputPayload input)
         {
-            
+
             // Should always be in sync with same function on Client
-            transform.position += input.inputVector * 5f * minTimeBetweenTicks;
+            transform.Translate(input.inputVector * 5f * minTimeBetweenTicks, Space.World);
 
             return new StatePayload()
             {

@@ -40,7 +40,7 @@ namespace DarkRiftRPG
 
                 foreach (KeyValuePair<ushort, GameObject> enemy in Enemies)
                 {
-                    EnemySpawnData enemySpawnData = new EnemySpawnData(enemy.Key,enemy.Value.transform.position);
+                    EnemySpawnData enemySpawnData = new EnemySpawnData(enemy.Key,enemy.Value.transform.position, enemy.Value.transform.rotation);
                     ServerManager.Instance.SendToClient(clientID, Tags.SpawnEnemy, enemySpawnData);
                 }
             }

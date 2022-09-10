@@ -85,7 +85,7 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 128
       Script: {instanceID: 0}
-    - Class: 136
+    - Class: 137
       Script: {instanceID: 0}
     - Class: 157
       Script: {instanceID: 0}
@@ -370,7 +370,7 @@ ScriptsOnlyBuild:
     className: Button
   - hash:
       serializedVersion: 2
-      Hash: 5f5c0e1bedf654c44e85e410eaca65da
+      Hash: f9daf370c0378be73f86710a85649d7c
     assemblyName: Assembly-CSharp.dll
     namespaceName: DarkRiftRPG
     className: EnemyAi
@@ -623,4 +623,4 @@ ScriptsOnlyBuild:
   platform: 19
   scenePathNames:
   - Assets/Scenes/Server.unity
-  playerPath: D:/unity/mmo_movement_synch/mmo_movement_synch_server/Executable/mmo_server.exe
+  playerPath: D:/unity/git/mmo_movement_synch/mmo_movement_synch/mmo_movement_synch_server/Executable/mmo_server.exe

@@ -55,7 +55,7 @@ namespace DarkRiftRPG
         {
             //ServerMovement.Instance.OnClientInput(client, inputPayload);
             PlayerManager.Instance.MovePlayerOnServer(client, inputPayload);
-            Debug.Log(client.ID + " " + inputPayload.inputVector);
+            //Debug.Log(client.ID + " " + inputPayload.inputVector);
         }
 
         private void OnSpawnLocalPlayerRequest()
@@ -68,7 +68,7 @@ namespace DarkRiftRPG
         public void SpawnLocalPlayerOnClient(PlayerSpawnData data)
         {
             PlayerIdSerial clientIdSerial = new PlayerIdSerial(ClientID);
-            Debug.Log("TOTO JE CLIENT ID XDD" + ClientID);
+            //Debug.Log("TOTO JE CLIENT ID " + ClientID);
             ServerManager.Instance.SendToClient(ClientID, Tags.LocalPlayerID, clientIdSerial);
             ServerManager.Instance.SendToClient(data.ID, Tags.SpawnPlayer, data);
         }

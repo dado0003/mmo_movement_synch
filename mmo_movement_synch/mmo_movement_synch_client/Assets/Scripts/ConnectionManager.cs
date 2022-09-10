@@ -47,13 +47,13 @@ namespace DarkRiftRPG
         {
             if (Client.ConnectionState == ConnectionState.Connected)
             {
-                Debug.Log("Connected to server!");
+                //Debug.Log("Connected to server!");
                 OnConnectedToServer();
 
             }
             else
             {
-                Debug.LogError($"Unable to connect to server. Reason: {e.Message} ");
+                //Debug.LogError($"Unable to connect to server. Reason: {e.Message} ");
             }
         }
 
@@ -119,7 +119,6 @@ namespace DarkRiftRPG
 
         private void SpawnEnemy(EnemySpawnData enemySpawnData)
         {
-            Debug.Log("PSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS: " + enemySpawnData.Position);
             GameManager.Instance.SpawnEnemyWithID(enemySpawnData);
         }
 
@@ -130,7 +129,10 @@ namespace DarkRiftRPG
 
         private void MoveServerPlayersPayload(InputPayloadWithID playerInputPayload)
         {
-            InputPayload sendPayload = new InputPayload(playerInputPayload.tick, playerInputPayload.inputVector);
+            InputPayload sendPayload = new InputPayload();
+            sendPayload.tick = playerInputPayload.tick;
+            sendPayload.inputVector = playerInputPayload.inputVector;
+            sendPayload.lookRotation = playerInputPayload.lookRotation;
             //Debug.Log("ID" + playerInputPayload.id + "Tick:" + sendPayload.tick + "Vector:" + sendPayload.inputVector);
             if (GameManager.Instance != null) { 
             GameManager.Instance.MoveServerPlayerPayload(playerInputPayload.id, sendPayload);
@@ -140,7 +142,7 @@ namespace DarkRiftRPG
         private void ReceiveLocalPlayerID(PlayerIdSerial playerIdSerial)
         {
             LocalClientID = playerIdSerial.ID;
-            Debug.Log("Connection Manager Local Client ID = "+LocalClientID);
+            //Debug.Log("Connection Manager Local Client ID = "+LocalClientID);
         }
 
         /*
@@ -166,7 +168,7 @@ private void OnSpawnLocalPlayerResponse(SpawnLocalPlayerResponseData data)
         {
             if (!data.JoinGameRequestAccepted)
             {
-                Debug.Log("houston we have a problem");
+               
                 return;
             }
 
@@ -174,7 +176,11 @@ private void OnSpawnLocalPlayerResponse(SpawnLocalPlayerResponseData data)
         }
         public void SendPosToServer(InputPayload inputPayload)
         {
-            using (Message message = Message.Create((ushort)Tags.InputPayloadTag, new InputPayload(inputPayload.tick, inputPayload.inputVector)))
+            InputPayload newInputPayload = new InputPayload();
+            newInputPayload.tick = inputPayload.tick;
+            newInputPayload.inputVector = inputPayload.inputVector;
+            newInputPayload.lookRotation = inputPayload.lookRotation;
+            using (Message message = Message.Create((ushort)Tags.InputPayloadTag, newInputPayload))
             {
                 Client.SendMessage(message, SendMode.Reliable);
             }
